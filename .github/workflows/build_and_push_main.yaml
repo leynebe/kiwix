@@ -1,0 +1,18 @@
+name: build-and-push-main
+
+on:
+  push:
+    branches: # SOURCE: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-using-concurrency-and-the-default-behavior-1
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # SOURCE: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#choosing-github-hosted-runners
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build -f Dockerfile -t ghcr.io/${GITHUB_REPOSITORY}:main .
+
