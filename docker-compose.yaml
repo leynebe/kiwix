@@ -1,9 +1,9 @@
 name: kiwix
 services:
-  wizix:
+  kiwix:
     build: '.'
     volumes:
-    - ~/Documents/wizix/:/zims
+    - ~/Documents/zims:/zims
     tty: true
     stdin_open: true
     ports:

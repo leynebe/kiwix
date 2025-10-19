@@ -10,8 +10,8 @@ A container image to update `*.zim` files before hosting them.
 
 ## USAGE regular
 
-* `podman build -t wizix .`
-* `podman run -v ~/Documents/wizix/:/zims -ti -p 8080:8080 wizix`
+* `podman build -t leynebe/kiwix:main .`
+* `podman run -v ~/Documents/kiwix/:/zims -ti -p 8080:8080 leynebe/kiwix:main`
 
 ## USAGE compose
 
