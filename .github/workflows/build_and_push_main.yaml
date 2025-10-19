@@ -12,7 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest # SOURCE: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#choosing-github-hosted-runners
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
+    - uses: actions/checkout@v5
+    - name: Build image
       run: docker build -f Dockerfile -t ghcr.io/${GITHUB_REPOSITORY}:main .
-
+    - name: Push image
+      run: docker run ghcr.io/${GITHUB_REPOSITORY}:main
+    
