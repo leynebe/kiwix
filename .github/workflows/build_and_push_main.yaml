@@ -16,5 +16,5 @@ jobs:
     - name: Build image
       run: docker build -f Dockerfile -t ghcr.io/${GITHUB_REPOSITORY}:main .
     - name: Push image
-      run: docker run ghcr.io/${GITHUB_REPOSITORY}:main
+      run: docker push ghcr.io/${GITHUB_REPOSITORY}:main
     
