@@ -1,0 +1,13 @@
+name: kiwix
+services:
+  wizix:
+    build: '.'
+    volumes:
+    - ~/Documents/wizix/:/zims
+    tty: true
+    stdin_open: true
+    ports:
+        - 8080:8080
+    image: leynebe/kiwix:main
+    network_mode: host
+  

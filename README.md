@@ -1,6 +1,6 @@
 # kiwix-server + kiwix-zim-updater
 
-A docker image to scan and host `*.zim` files.
+A container image to update `*.zim` files before hosting them.
 
 ## SOURCES
 
@@ -8,7 +8,12 @@ A docker image to scan and host `*.zim` files.
     * It contains this fix: https://github.com/jonboiser/dockerized-kiwix-server/pull/3/files
 * https://github.com/jojo2357/kiwix-zim-updater
 
-## USAGE
+## USAGE regular
 
-* `docker build -t wizix .`
-* `docker run -v ~/wizix/:/zims -ti -p 8080:8080 wizix`
+* `podman build -t wizix .`
+* `podman run -v ~/Documents/wizix/:/zims -ti -p 8080:8080 wizix`
+
+## USAGE compose
+
+* `podman compose build`
+* `podman compose run`
