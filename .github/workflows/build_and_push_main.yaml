@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest # SOURCE: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#choosing-github-hosted-runners
+    permissions:
+      packages: write
     steps:
     - uses: actions/checkout@v5
     - name: Build image
